@@ -15,24 +15,13 @@ class RentalsController < ApplicationController
 
     if user_signed_in?
       user = current_user
-      if user.customer_uri
-        Balanced::Customer.find(user.customer_uri)
-      else
-        buyer = marketplace.create_customer(
-          :name   => user.name,
-          :email  => user.email
-          )
-        user.customer_uri = buyer.uri
-      end
+      buyer = user.balanced_customer(marketplace)
     else
-      begin
-        buyer = marketplace.create_customer(
-          :name   => params[:"guest-name"],
-          :email  => params[:"guest-email_address"]
-          )
-      rescue
-        "There was an error adding a customer"
-      end
+      buyer = User.create_balanced_customer(
+        marketplace,
+        :name  => params[:"guest-name"],
+        :email => params[:"guest-email_address"]
+        )
     end
       listing = Listing.find(params[:listing_id])
 

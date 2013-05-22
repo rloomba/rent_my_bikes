@@ -13,4 +13,33 @@ class User < ActiveRecord::Base
 
   has_many :listings
 
+
+  def balanced_customer(marketplace)
+    if self.customer_uri
+        Balanced::Customer.find(self.customer_uri)
+    else
+      begin
+        customer = marketplace.create_customer(
+          :name   => self.name,
+          :email  => self.email
+          )
+        self.customer_uri = customer.uri
+        customer
+      rescue
+        "There was error fetching the Balanced customer"
+      end
+    end
+  end
+
+  def self.create_balanced_customer(marketplace, params = {})
+    begin
+      marketplace.create_customer(
+        :name   => params[:name],
+        :email  => params[:email]
+        )
+    rescue
+      "There was an error adding a customer"
+    end
+  end
+
 end

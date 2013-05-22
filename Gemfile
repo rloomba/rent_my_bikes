@@ -53,10 +53,9 @@ gem 'rspec-rails'
 
 gem 'protected_attributes'
 
-group :assets do
-  gem 'therubyracer', :platforms => :ruby
-  gem 'less-rails'
-end
+gem 'therubyracer'
+
+gem 'less-rails'
 
 group :development do
   gem 'debugger'
