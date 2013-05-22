@@ -4,10 +4,7 @@ ruby "2.0.0"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0.rc1'
 
-# Use sqlite3 as the development database for Active Record
-gem 'sqlite3'
-
-# Use pg for production and test databases
+# Use pg for db
 gem 'pg'
 
 # Use SCSS for stylesheets
