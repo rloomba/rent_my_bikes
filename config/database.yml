@@ -1,14 +1,25 @@
-common: &common
+development:
   adapter: postgresql
+  host: localhost
+  encoding: unicode
+  database: rentmybike_dev
+  pool: 5
   username:
   password:
-  host: localhost
-  timeout: 5000
-
-development:
-  <<: *common
-  database: rentmybike_dev
 
 test:
-  <<: *common
+  adapter: postgresql
+  encoding: unicode
   database: rentmybike_test
+  pool: 5
+
+# Add the below...
+
+production:
+  adapter: postgresql
+  host: localhost
+  encoding: unicode
+  database: rentmybike_production
+  pool: 5
+  username:
+  password:
