@@ -10,9 +10,8 @@
 // WARNING: THE FIRST BLANK LINE MARKS THE END OF WHAT'S TO BE PROCESSED, ANY BLANK LINE SHOULD
 // GO AFTER THE REQUIRES BELOW.
 //
-//= require jquery_ujs
-//= require jquery
-//= require base.js
+//= require jquery.min.js
+//= require main.js
 //= require_self
 
 var csrf = '54cb4ff6c29811e2b033026ba7cd33d0';
