@@ -1,0 +1,14 @@
+common: &common
+  adapter: postgresql
+  username:
+  password:
+  host: localhost
+  timeout: 5000
+
+development:
+  <<: *common
+  database: rentmybike_dev
+
+test:
+  <<: *common
+  database: rentmybike_test
