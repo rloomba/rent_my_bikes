@@ -27,11 +27,13 @@ class ListingsController < ApplicationController
     # add bank account uri passed back from balanced.js
 
     owner.add_bank_account(bank_account_uri)
-    if user
-      listing = Listing.create(:title => 'new listing!', :user_id => user.id, :owner_uri => owner.uri)
-    else
-      listing = Listing.create(:title => 'new listing!', :owner_uri => owner.uri)
-    end
+
+    # don't create new listing on site
+    # if user
+    #   listing = Listing.create(:title => 'new listing!', :user_id => user.id, :owner_uri => owner.uri)
+    # else
+    #   listing = Listing.create(:title => 'new listing!', :owner_uri => owner.uri)
+    # end
     render :confirmation
   end
 

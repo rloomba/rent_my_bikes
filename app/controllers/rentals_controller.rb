@@ -30,10 +30,13 @@ class RentalsController < ApplicationController
       owner_uri = listing.owner_uri
       owner = Balanced::Customer.find(owner_uri)
 
+      # debit buyer amount of listing
+
       debit = buyer.debit(
         :amount       => listing.price,
         :description  => listing.description
         )
+      # credit owner of bicycle amount of listing
 
       credit = owner.credit(
         :amount =>      listing.price,
