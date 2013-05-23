@@ -18,9 +18,8 @@ class ListingsController < ApplicationController
       owner = user.balanced_customer(marketplace)
     else
         owner = User.create_balanced_customer(
-        marketplace,
-        :name  => params[:"guest-name"],
-        :email => params[:"guest-email_address"]
+        :name  => params[:'guest-name'],
+        :email => params[:'guest-email_address']
         )
     end
 

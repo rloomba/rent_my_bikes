@@ -11,10 +11,7 @@ user = User.create(:email                 => 'asdf@asdf.com',
 marketplace = Balanced::Marketplace.my_marketplace
 
 # create a bicycle owner
-owner = marketplace.create_customer(
-          :name   => user.name,
-          :email  => user.email
-          )
+owner = user.balanced_customer
 
 # add a bank account to be able to receive payments (credits)
 bank_account = marketplace.create_bank_account(
@@ -23,7 +20,6 @@ bank_account = marketplace.create_bank_account(
           :name => "Jimbo Jenkins"
         )
 owner.add_bank_account(bank_account)
-
 
 
 listing1 = Listing.create(:user_id => 1,
