@@ -38,7 +38,7 @@ Edit the following in `rentmybike/config/initializers/app_constants.rb`:
 Example:
 
 ```ruby
-BALANCED_SECRET = '54cb4ff6c29811e2b033026ba7cd33d0'
+BALANCED_SECRET = 'your-balanced-secret'
 ```
 
 Edit the following in `rentmybike/config/initializers/devise.rb`:

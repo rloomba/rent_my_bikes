@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20130520185730) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "listings", force: true do |t|
     t.integer  "bicycle_id"
     t.string   "title"
@@ -30,9 +33,7 @@ ActiveRecord::Schema.define(version: 20130520185730) do
     t.string   "debit_uri"
     t.string   "credit_uri"
     t.integer  "owner_id"
-    t.string   "owner_uri"
     t.integer  "buyer_id"
-    t.string   "buyer_uri"
     t.integer  "listing_id"
     t.datetime "created_at"
     t.datetime "updated_at"

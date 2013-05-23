@@ -23,7 +23,7 @@ class RentalsController < ApplicationController
     end
 
     listing = Listing.find(params[:listing_id])
-    listing.rent :renter => buyer, :card_uri => params[:card_uri]
+    listing.rent(:renter => buyer, :card_uri => params[:card_uri])
     render :confirmation
   end
 

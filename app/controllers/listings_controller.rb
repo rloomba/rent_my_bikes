@@ -27,7 +27,7 @@ class ListingsController < ApplicationController
 
     owner.add_bank_account(bank_account_uri)
 
-    # don't create new listing on site
+    # don't create new listing on demo site
     # if user
     #   listing = Listing.create(:title => 'new listing!', :user_id => user.id, :owner_uri => owner.uri)
     # else
