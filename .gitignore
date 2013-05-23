@@ -14,3 +14,10 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+
+# ignore intellij
+.idea
+*.iml
+
+# ignore rbenv
+.ruby-version
